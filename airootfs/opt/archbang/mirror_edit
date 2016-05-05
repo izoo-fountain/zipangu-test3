@@ -1,0 +1,14 @@
+#!/bin/bash
+# simple mirrorlist edit script
+# by Mr Green
+# Beer license
+
+# check for root
+[[ ${EUID} -ne 0 ]] && echo "This script must be run as root." && exit 1
+
+# Back up current mirrorlis
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+
+# Start editor
+echo "Start Geany editor"
+geany /etc/pacman.d/mirrorlist

@@ -1,0 +1,30 @@
+
+# panel
+(sleep 2 && tint2) &
+
+# Set wallpaper
+(sleep 2 && feh --bg-scale /usr/share/wallpapers/dusty_guitar-Music2.jpg) &
+
+# Enable as required
+#xbacklight -set 100 &
+#/usr/bin/synclient TouchpadOff=1 &
+#setxkbmap jp &
+
+# Networking system tray applet
+#(sleep 3 && nm-applet) &
+
+# Volume control
+(sleep 3 && volumeicon) &
+
+# Onscreen system stats
+(sleep 2 && conky) &
+
+# Effects
+#(sleep 2 && compton -b) &
+
+fcitx -d &
+numlockx &
+wicd-client --tray &
+#(sleep 3 && /usr/bin/setxkbmap -rules evdev -model jp106 -layout jp) &
+#(sleep 3 && xmodmap ~/xmodmap.jp) &
+

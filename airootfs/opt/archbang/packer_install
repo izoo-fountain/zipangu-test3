@@ -1,0 +1,25 @@
+#!/bin/bash
+# simple packer install script
+# based on code by oliver 
+# by Mr Green
+# Beer license
+
+# check for root
+[[ ${EUID} -ne 0 ]] && echo "This script must be run as root." && exit 1
+
+echo "Create a directory for build in /tmp"
+echo "cd $(mktemp -d)"
+cd $(mktemp -d)
+
+echo "Install required packages and git"
+echo "pacman -S --needed base-devel git --noconfirm"
+pacman -S --needed base-devel git --noconfirm
+
+echo "Fetch PKGBUILD for packer from Aur"
+echo "git clone https://aur.archlinux.org/packer.git"
+git clone https://aur.archlinux.org/packer.git
+
+echo "Build and install packer"
+echo "makepkg -is"
+cd packer
+makepkg -is

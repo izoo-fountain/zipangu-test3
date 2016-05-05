@@ -1,0 +1,2 @@
+#!/bin/sh
+feh  --bg-scale '/usr/share/wallpapers/dusty_guitar-Music2.jpg' 
